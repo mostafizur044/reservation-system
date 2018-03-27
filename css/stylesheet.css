@@ -1,0 +1,547 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
+
+:focus {
+    outline: none !important;
+}
+body {
+    background-color: #ffffff;
+    color: #000!important;
+    font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
+    line-height: 20px;
+    font-size: 15px;
+    margin: 0px;
+    padding: 0px;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
+}
+/* Override the bootstrap defaults */
+h1 {
+    font-size: 33px;
+}
+h2 {
+    font-size: 27px;
+    margin: 15px 0 10px 0;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+h3 {
+    font-size: 21px;
+}
+h4 {
+    font-size: 22px;
+}
+h5 {
+    font-size: 12px;
+}
+h6 {
+    font-size: 10.2px;
+}
+a {
+    color: #F47920;
+}
+a:hover {
+    text-decoration: none;
+}
+legend {
+    font-size: 18px;
+    padding: 7px 0px
+}
+label {
+    font-size: 14px;
+}
+.fa-down-arrow:before {
+    content: "\f107";
+    font-family: "Fontawesome";
+}
+select.form-control, textarea.form-control, input[type="text"].form-control, input[type="password"].form-control, input[type="datetime"].form-control, input[type="datetime-local"].form-control, input[type="date"].form-control, input[type="month"].form-control, input[type="time"].form-control, input[type="week"].form-control, input[type="number"].form-control, input[type="email"].form-control, input[type="url"].form-control, input[type="search"].form-control, input[type="tel"].form-control, input[type="color"].form-control {
+    font-size: 14px;
+}
+.input-group input, .input-group select, .input-group .dropdown-menu, .input-group .popover {
+    font-size: 14px;
+}
+.input-group .input-group-addon {
+    font-size: 12px;
+    height: 30px;
+}
+/* Fix some bootstrap issues */
+span.hidden-xs, span.hidden-sm, span.hidden-md, span.hidden-lg {
+    display: inline;
+}
+.nav-tabs {
+    margin-bottom: 15px;
+}
+div.required .control-label:after {
+    content: ' *';
+    color: #F00;
+    font-weight: bold;
+}
+.box {
+    margin: 0 auto 20px;
+}
+
+.header-tel {
+    color: white;
+    font-size: 20px;
+    line-height: 42px;
+}
+.header-email {
+    color: white;
+    font-size: 20px;
+}
+
+/* buttons */
+.buttons {
+    margin: 1em 0;
+    overflow: hidden;
+}
+.btn {
+    padding: 7.5px 12px;
+    font-size: 12px;
+    border: 1px solid #D0D0D0;
+}
+.btn-xs {
+    font-size: 9px;
+}
+.btn-sm {
+    font-size: 10.2px;
+}
+.btn-lg {
+    padding: 10px 16px;
+    font-size: 15px;
+}
+.btn-group > .btn, .btn-group > .dropdown-menu, .btn-group > .popover {
+    font-size: 14px;
+}
+.btn-group > .btn-xs {
+    font-size: 9px;
+}
+.btn-group > .btn-sm {
+    font-size: 10.2px;
+}
+.btn-group > .btn-lg {
+    font-size: 15px;
+}
+.btn-default {
+    color: #777;
+    background-color: #e7e7e7;
+}
+
+
+.btn-primary {
+    color: #fff;
+    height: 30px;
+    background-color: #f47920;
+    padding: 6px 20px;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
+    background-color: #1f90bb;
+    background-position: 0 -15px;
+}
+.btn-warning {
+    color: #ffffff;
+    background-color: #faa732;
+}
+.btn-danger {
+    color: #ffffff;
+    background-color: #da4f49;
+}
+.btn-success {
+    color: #ffffff;
+}
+
+.btn-info {
+    color: #ffffff;
+    background-color: #df5c39;
+}
+.btn-info:hover, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {
+    background-image: none;
+    background-color: #df5c39;
+}
+.btn-link {
+    border-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    color: #868686;
+    border-radius: 0;
+}
+.btn-link, .btn-link:active, .btn-link[disabled] {
+    background-color: rgba(0, 0, 0, 0);
+    background-image: none;
+    box-shadow: none;
+}
+.btn-inverse {
+    color: #ffffff;
+    background-color: #363636;
+}
+.btn-inverse:hover, .btn-inverse:active, .btn-inverse.active, .btn-inverse.disabled, .btn-inverse[disabled] {
+    background-color: #222222;
+}
+
+.product-block-inner {
+    position: relative;
+}
+.bootstrap-datetimepicker-widget{
+    background: #fff!important;
+}
+.bootstrap-datetimepicker-widget thead tr:first-child th:hover, .bootstrap-datetimepicker-widget td span:hover, .bootstrap-datetimepicker-widget td.active, .bootstrap-datetimepicker-widget td.active:hover {
+    background-color: #43s5d5!important;
+    color: #fff !important;
+    text-shadow: none !important;
+}
+.bootstrap-datetimepicker-widget .timepicker-hour, .bootstrap-datetimepicker-widget .timepicker-minute, .bootstrap-datetimepicker-widget .timepicker-second {
+    width: 40px !important;
+}
+.bootstrap-datetimepicker-widget td.active, .bootstrap-datetimepicker-widget td.active:hover {
+    background-color: #43s5d5 !important;
+}
+.bootstrap-datetimepicker-widget td.today:before {
+    border-bottom: 7px solid #43s5d5 !important;
+}
+.bootstrap-datetimepicker-widget td.day:hover, .bootstrap-datetimepicker-widget td.hour:hover, .bootstrap-datetimepicker-widget td.minute:hover, .bootstrap-datetimepicker-widget td.second:hover, .bootstrap-datetimepicker-widget td span.active, .bootstrap-datetimepicker-widget thead tr:first-child th:hover, .bootstrap-datetimepicker-widget td span:hover {
+    background-color: #F47920 !important;
+    color: #fff !important;
+    text-shadow: none !important;
+}
+.bootstrap-datetimepicker-widget td span {
+    height: 36px !important;
+    width: 24px !important;
+    line-height: 41px !important;
+    border-radius: 0 !important;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu li > a:hover {
+    background-color: #43s5d5 !important;
+}
+.timepicker .timepicker-minute,.timepicker .separator, .timepicker a[data-action="incrementMinutes"], .timepicker a[data-action="decrementMinutes"]{ display:none}
+
+/* make a reservation */
+
+.pbooking .box-heading {
+    border-top: 2px solid #0ea216;
+    background: #0ea216;
+    padding: 15px;
+    color: #fff;
+    text-transform: none!important;
+}
+.pbooking .box-heading-inner {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.pbooking .box-data {
+    margin: 10px 15px;
+}
+.pbooking .box {
+    background: #f7f8f9;
+    margin-left: 15px;
+    margin-right: -15px;
+    box-shadow: -2px 2px 10px #ccc;
+
+}
+.pbooking label {
+    display: inline-block;
+    margin: 3px 0;
+    font-weight:700;
+    font-size: 18px;
+}
+.ph-book-now-total {
+    border-top: 2px solid #f47920;
+    border-bottom: 2px solid #f47920;
+    padding: 10px 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.ph-price-incl li {
+    list-style: none;
+}
+.ph-price-incl li:before {
+    font-family: 'FontAwesome';
+    content: "\f00c";
+    color: green;
+    list-style: none;
+    margin-right: 7px;
+}
+.ph-total-result {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f47920;
+    padding-top:5px;
+    padding-bottom: 5px;
+}
+.ph-total-result-lbl {
+    font-size: 16px;
+    font-weight: bold;
+    padding-top:5px;
+    padding-bottom: 5px;
+}
+.pbooking .box ul {
+    margin-left: -40px;
+    margin-top: 8px;
+}
+#booking_options .input-group {
+    border:1px solid #ddd;
+    background: #fff
+}
+#booking_options .btn-default {
+    background: #fff;
+    color: #000;
+    font-size: 20px;
+}
+.ph-opt {
+    text-align: center;
+    padding: 5px 0;
+    font-size: smaller;
+}
+.ph-opt::after {
+    content: " - or - ";
+    display: block;
+}
+.ph-phone-enq h3 {
+    border-bottom:1px solid #ddd;
+    padding-bottom: 7px;
+}
+.ph-phone-nmb {
+    font-size: 27px;
+    color: #f47920;
+    font-weight: bold;
+}
+.ph-phone-nmb-ctn {
+    font-size: 16px;
+    color: #f47920;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-style: italic;
+}
+.ph-bo {
+    width: 100%;
+    text-align: left!important;
+    height: 48px!important;
+    font-size: 20px!important;
+    background-color: #0ea216!important;
+    border: #0ea216!important;
+}
+.ph-bo:hover {
+    background-color:#DB6C1C;
+}
+.space20 {
+    padding-top:20px;
+    clear:both;
+}
+.pbooking .panel-group {
+    padding-bottom: 15px;
+}
+.pbooking .panel-title {
+    font-size: 20px;
+    width: 95%;
+    background: #343434;
+    border: none;
+    text-align: left;
+    text-transform: uppercase;
+}
+a.enquery i.dropDownEnq {
+    float:right;
+    font-size:1.1em;
+}
+.pbooking  .panel-default > .panel-heading {
+    color: #fff;
+    border-color: #343434;
+    background-color: #343434;
+}
+.pbooking label.link:hover {
+    cursor:pointer;
+    color:#f47920;
+}
+.pbooking .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
+    margin-left: 0px;
+    border: none;
+} 
+.pbooking fieldset {
+    padding: 0;
+    margin: 0 0 15px;
+    border: 0px solid #ddd;
+    min-width: 0;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.pbooking i.fa.fa-shopping-cart {
+    font-size: 24px;
+    margin-right: 8px;
+}
+.pbooking i.fa.fa-envelope {
+    font-size: 24px;
+    margin-right: 8px;
+}
+.pbooking i.fa.fa-phone-square {
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+#booking_options .form-control {
+    border: none!important;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    color: #ececec;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #f6f6f6;
+    border-radius: 6px;
+    padding: 15px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 105%;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+button.btn.btn-calc {
+    margin-top: 26px;
+    border: 1px solid #ccc;
+    height: 40px;
+    padding: 8px;
+    width: 100%;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+button.btn.btn-calc:hover {
+    border-color: #ccc;
+    background: #bbb;
+}
+.cat-top {
+    background: #eee;
+    margin-bottom: 15px;
+}
+.cat-top-box {
+    position: absolute;
+    height: 585px;
+    top: 0;
+    left: 0;
+    background: #212121;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.cat-top-info {
+    margin-top: 115px;
+    padding-top: 24px;
+    border-top: 2px solid #f47920;
+}
+.box.cat-left {
+    margin-top: 102px;
+}
+
+@media (max-width: 758px) {
+    .cat-top-info {
+        padding-top: 15px;
+        text-align: center;
+    }
+    .cat-top-inner {
+        background: none!important; 
+    }
+}
+
+div#cat-description {
+    border-top: 4px solid #f47920;
+    border-bottom: 2px solid #f47920;
+    /* background: #eee; */
+    padding: 15px 0;
+    /*margin: 0px;*/
+    margin-bottom: 60px;
+}
+
+div#product.pbooking {
+    position: sticky;
+    top: 15px;
+}
+
+/* radio button */
+/*Radio box*/
+
+#product input[type="radio"]{
+	position: absolute;
+	right: 9000px;
+}
+
+#product input[type="radio"] + .label-text:before{
+	content: "\f10c";
+	font-family: "FontAwesome";
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing:antialiased;
+	width: 1em;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+#product input[type="radio"]:checked + .label-text:before{
+	content: "\f192";
+	color: #f47920;
+	animation: effect 250ms ease-in;
+}
+
+#product input[type="radio"]:disabled + .label-text{
+	color: #aaa;
+}
+
+#product input[type="radio"]:disabled + .label-text:before{
+	content: "\f111";
+	color: #ccc;
+}
+
+/*Radio Toggle*/
+
+#product .toggle input[type="radio"] + .label-text:before{
+	content: "\f204";
+	font-family: "FontAwesome";
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing:antialiased;
+	width: 1em;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+#product .toggle input[type="radio"]:checked + .label-text:before{
+	content: "\f205";
+	color: #16a085;
+	animation: effect 250ms ease-in;
+}
+
+#product .toggle input[type="radio"]:disabled + .label-text{
+	color: #aaa;
+}
+
+#product .toggle input[type="radio"]:disabled + .label-text:before{
+	content: "\f204";
+	color: #ccc;
+}
+
+@keyframes effect{
+	0%{transform: scale(0);}
+	25%{transform: scale(1.3);}
+	75%{transform: scale(1.4);}
+	100%{transform: scale(1);}
+}
+
+.pricedetails:hover, .pricedetails:focus{
+    color:#f47920;
+}

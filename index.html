@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Task_2</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Js -->
+  <script src="node_modules/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="node_modules/bootstrap.min.js"></script>
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+  <link rel="stylesheet" href="node_modules/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap-datetimepicker.min.css" />
+  
+  <script type="text/javascript" src="node_modules/moment.js"></script>
+  <script type="text/javascript" src="node_modules/bootstrap-datetimepicker.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <!--  -->
+</head>
+<body>
+
+<div class="container-fluid clearfix row">
+    <div class="col-lg-4"></div>
+	<div id="product" class="col-lg-4  pbooking">
+        <div id="reserve" class="box">
+            <div class="box-heading">
+                <div class="box-heading-inner">Make a reservation</div>
+                <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i> How to Book
+                    <span class="tooltiptext">1. Select start/end date and time you would like the item at. <br>
+                        2. Click Calculate to get an estimated total <br>
+                        3. Book with Online, Email or Phone options.<br>
+                        4. We will contact you within 30 mins to confirm your booking
+                    </span>
+                </div>
+            </div>
+            <div class="box-data">
+                <div class="row" id="booking_options">
+                    <div class="col-sm-6" id="calender_php">
+                        <div class="form-group required">
+                            <label class="control-label" for="input-option293">BOOK FROM</label>
+                            <div class="input-group" id='startDate'>
+                                <input type="text" id="book-from" name="option[293]" value="" data-date-format="YYYY-MM-DD" id="input-option293" class="form-control datetime">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6" id="calender_php">
+                        <div class="form-group required">
+                            <label class="control-label" for="input-option294">BOOK TO</label>
+                            <div class="input-group" id='endDate'>
+                                <input type="text" id="book-to"  name="option[294]" value="" data-date-format="YYYY-MM-DD" id="input-option294" class="form-control datetime">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <h4 style="margin:0px;margin-left:15px;">Duration</h4>
+                    <div class="col-sm-6" id="calender_php">
+                        <div class="form-group required">
+                            <label class="control-label" for="shift1">START</label>
+                            <select class="form-control" id="shift1" style="border:1px solid #ddd;">
+                                    <option></option>   
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6" id="calender_php">
+                        <div class="form-group required">
+                            <label class="control-label" for="shift2">FINSIH</label>
+                            <select class="form-control" id="shift2" style="border:1px solid #ddd;">
+                                    <option></option>   
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group required" id="qty-cart">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label class="control-label qty" for="input-quantity">QUANTITY</label>
+                            <select name="quantity" id="input-quantity" class="form-control">
+                                    <option selected="selected" value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                            </select>
+                            <input type="hidden" name="product_id" value="70">
+                        </div>
+                        <div class="col-lg-6">
+                            <label>EMPLOYEE HOURS</label>
+                            <div class="input-group">
+                                <input type="text" id="employee-hours" name="employee-hours" value=""  class="form-control">
+                                <span class="input-group-addon" style="border-radius:0px;font-size:14px;">hours</span>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+                <div class="row calculator">   
+                    <div class="col-lg-6">
+                        <button class="btn btn-calc" id="total-calculation">Calculate</button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button id="invoice-details" class="btn btn-calc" data-toggle="modal" data-target="#invoiceDetails">Quote Details</button>
+                    </div>
+                </div>
+                
+                <div class="space20"></div>
+
+
+                <!-- Total Price End -->
+                <div class="ph-book-now-total">
+                    <div class="row">
+                        <div class="col-sm-5 ph-total-result-lbl"><b>CHARGE PERIOD</b></div>
+                        <div class="col-sm-7 ph-total-result" id="showDays">--</div>
+                        <div class="col-sm-5 ph-total-result-lbl"><b>TOTAL PRICE</b></div>
+                        <div class="col-sm-7 ph-total-result" id="showPrice">$0</div>
+                    </div>
+                </div>
+                <!-- Total Price End -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span><b>Our Rates Include</b></span>
+                        <ul class="ph-price-incl">
+                            <li><span id="toolQat">1</span> x Chisels for Jackhammer</li>
+                            <li>GST<br></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="space20"></div>
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <button class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" class="enquery collapsed">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i> Email Us<i class="fa fa-chevron-down dropDownEnq" aria-hidden="true"></i></a>
+                            </button>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                            <div class="panel-body" id="emailEnquary">
+                                <form class="form-horizontal">
+                                    <fieldset>
+                                        <div class="col-sm-12" for="input-name">
+                                            <label>Subject</label>
+                                            <input type="text" name="name" value="Chisels for Jackhammer" id="????" disabled="" class="form-control">
+                                        </div>
+                                        <div class="col-sm-12" for="input-name">
+                                            <label>Your Name</label>
+                                            <input type="text" name="name" value="" id="input-name" class="form-control">
+                                        </div>
+                                        <div class="col-sm-6" for="input-email">
+                                            <label>Email Address</label>
+                                            <input type="text" name="email" value="" id="input-email" class="form-control">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label>Phone Number</label>
+                                            <input type="text" name="phone" value="" id="input-phone" class="form-control">
+                                        </div>
+                                        <div class="col-sm-12" for="input-enquiry">
+                                            <label>Enquiry</label>
+                                            <textarea name="enquiry" rows="10" id="input-enquiry" class="form-control" placeholder="Chisels for Jackhammer"></textarea>
+                                        </div>
+                                    </fieldset>
+                                    <div class="pull-right button-group">
+                                        <input class="btn btn-primary" value="Submit" type="submit" onclick="ga('send', 'event', 'Form', 'Submit', 'Make a Reservation');">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <button class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="enquery collapsed" aria-expanded="false"><i class="fa fa-phone-square" aria-hidden="true"></i> Call Us<i class="fa fa-chevron-down dropDownEnq" aria-hidden="true"></i></a>
+                            </button>
+                        </div>
+                        <div id="collapse2" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                            <div class="panel-body ph-phone-enq">
+                                <div class="row">
+                                    <div class="col-xs-4 col-sm-4">
+                                        <img class="img-rounded" src="https://perfectcontracting.com.au/wp-content/themes/riley/img/team/luke_new.jpg" width="100%" style="margin-bottom: 15px;">
+                                    </div>
+                                    <div class="col-xs-8 col-sm-8">
+                                        <h3>Luke</h3>
+                                        <p class="ph-phone-nmb"><!---->0452 249 271<br>
+                                            <span class="ph-phone-nmb-ctn">Call us today!</span></p>
+                                    </div>
+                                </div>
+                                <p></p>
+                            </div>
+                            <!-- Panel Body 2 End -->
+                        </div>
+                        <!-- Panel Collapse 2 End -->
+                    </div>
+                    <!-- Panel Panel Defoult End -->
+                </div>
+                <!-- Panel Group End -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div id="invoiceDetails" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="panel panel-primary">
+            <div class="panel-heading" style="font-size:20px;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                Quotation
+            </div>
+            <div id="invoiceDetails-body" class="panel-body" style="padding:0px;">
+                <div class="row invoiceDetails-div" style="margin:0px; padding:10px; border:1px solid #428bca;">
+                    <p style="margin-bottom: 0px"><strong>Employee price</strong></p>
+                    <div class="row">
+                        <div class="col-sm-3 emp-daily-rate"></div>
+                        <div class="col-sm-3 emp-hour-rate"></div>
+                    </div>  
+                    <p style="margin-bottom: 0px"><strong>Tool hire price</strong></p>
+                    <div class="row">
+                        <div class="col-sm-3 tool-daily"></div>
+                        <div class="col-sm-3 tool-hour"></div>
+                    </div>
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col-sm-6"><strong>Details</strong><hr></div>
+                        <div class="col-sm-2"><strong>Hour(s)</strong><hr></div>
+                        <div class="col-sm-2"><strong>Rate</strong><hr></div>
+                        <div class="col-sm-2"><strong>Pricee</strong><hr></div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
+
